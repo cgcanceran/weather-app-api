@@ -1,0 +1,20 @@
+application:
+  credentials:
+    clientId: 40262456
+    clientSecret: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9
+
+integration:
+  forecast:
+    appid: e34f5845539ffa94a5a357ca4c3c41ba
+  geocode:
+    key: 6795800282364b899cdd42eea9056647
+
+service:
+  domains:
+    geocode: https://api.opencagedata.com
+    weather: https://api.openweathermap.org
+    country: https://restcountries.com
+  endpoints:
+    geocode-endpoint: ${service.domains.geocode}/geocode/v1/json?key={key}&q={location}&pretty=1
+    weather-endpoint: ${service.domains.weather}/data/2.5/weather?lat={lat}&lon={lon}&appid={appid}
+    country-endpoint: ${service.domains.country}/v3.1/region/Oceania
